@@ -1,0 +1,23 @@
+{
+  "name": "spaindv-server",
+  "version": "1.0.0",
+  "description": "Node-Express-Mongo server for 2.2 indv. assignment",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kayvon Rahimi Morad Ali",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.2",
+    "mongoose": "4.8.x"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.5.3",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.3.0",
+    "nodemon": "^1.11.0"
+  }
+}

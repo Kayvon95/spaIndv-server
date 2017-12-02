@@ -1,7 +1,9 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var config = require('./config/env/env');
-var developerroutes_v1 = require('./api/developer.routes.v1');
+const characterRoutes_v1 = require('./api/character.routes.v1');
+const developerRoutes_v1 = require('./api/developer.routes.v1');
+const gameRoutes_v1 = require('./api/game.routes.v1');
 var app = express();
 
 module.exports = {};
@@ -14,7 +16,9 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.set('port', (process.env.PORT || config.env.webPort));
 app.set('env', (process.env.ENV || 'development'));
 
-app.use('/api/v1/', developerroutes_v1);
+app.use('/api/v1/characters', characterRoutes_v1);
+app.use('/api/v1/developers', developerRoutes_v1);
+app.use('/api/v1/games', gameRoutes_v1);
 
 // Catch invalid URL
 app.get('/about', function(req, res) {

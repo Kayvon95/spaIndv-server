@@ -4,14 +4,16 @@
   "description": "Node-Express-Mongo server for 2.2 indv. assignment",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon --exec \"mocha -R min\""
   },
   "author": "Kayvon Rahimi Morad Ali",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.2",
-    "mongoose": "4.8.x"
+    "mongoose": "4.8.x",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.12.1"
   },
   "devDependencies": {
     "@angular/cli": "^1.5.3",

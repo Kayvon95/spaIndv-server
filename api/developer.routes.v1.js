@@ -1,24 +1,8 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const express = require('express');
+const routes = express.Router();
+const Developer = require('../model/developer');
 
-const DeveloperSchema = new Schema({
-   name: {
-       type: String,
-       required: [true, 'A name is required.']
-   },
-   location: {
-     country: {
-         type: String
-     },
-     city: {
-         type: String
-     }
-   },
-   employeeCount: {
-       type: Number
-   }
+routes.get('/developers/info', function(req, res) {
+   res.json({ 'info': 'Developerlogic will be accessed via /developer/ routes.' });
 });
-
-const Developer = mongoose.model('developer', DeveloperSchema);
-
-module.exports = Developer;
+module.exports = routes;

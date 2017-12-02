@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var config = require('./config/env/env');
+var developerroutes_v1 = require('./api/developer.routes.v1');
 var app = express();
 
 module.exports = {};
@@ -9,6 +10,11 @@ module.exports = {};
 app.use(bodyParser.urlencoded({ 'extended': 'true' }));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+
+app.set('port', (process.env.PORT || config.env.webPort));
+app.set('env', (process.env.ENV || 'development'));
+
+app.use('/api/v1/', developerroutes_v1);
 
 // Catch invalid URL
 app.get('/about', function(req, res) {

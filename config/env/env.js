@@ -4,7 +4,7 @@ var env = {
     dbPort: process.env.DB_PORT || '27017',
     dbUser: process.env.DB_USER || '',
     dbPassword: process.env.DB_PASSWORD || '',
-    dbDatabase: process.env.DB_DATABASE || 'tempDb'
+    dbDatabase: process.env.DB_DATABASE || 'developers_test'
 };
 
 var dbUrl = process.env.NODE_ENV === 'production' ?

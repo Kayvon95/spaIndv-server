@@ -7,9 +7,10 @@ var env = {
     dbDatabase: process.env.DB_DATABASE || 'developers_test'
 };
 
-var dbUrl = process.env.NODE_ENV === 'production' ?
-    'mongodb://' + env.dbUser + ':' + env.dbPassword + '@' + env.dbHost + ':' + env.dbPort + '/' + env.dbDatabase :
-    'mongodb://localhost/' + env.dbDatabase;
+// var dbUrl = process.env.NODE_ENV === 'production' ?
+//     'mongodb://' + env.dbUser + ':' + env.dbPassword + '@' + env.dbHost + ':' + env.dbPort + '/' + env.dbDatabase :
+//     'mongodb://localhost/' + env.dbDatabase;
+var dbUrl =  `mongodb://localhost:${env.dbPort}/` + env.dbDatabase;
 
 module.exports = {
     env: env,

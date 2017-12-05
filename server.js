@@ -1,12 +1,15 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var config = require('./config/env/env');
+var mongo = require('./config/mongo.db.connector');
 var characterRoutes_v1 = require('./api/character.routes.v1');
 var developerRoutes_v1 = require('./api/developer.routes.v1');
 var gameRoutes_v1 = require('./api/game.routes.v1');
 var app = express();
 
-module.exports = {};
+// module.exports = {};
+
+mongo();
 
 // Set bodyparser
 app.use(bodyParser.urlencoded({ 'extended': 'true' }));

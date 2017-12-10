@@ -7,7 +7,7 @@ var developerRoutes_v1 = require('./api/developer.routes.v1');
 var gameRoutes_v1 = require('./api/game.routes.v1');
 var app = express();
 
-// module.exports = {};
+module.exports = {};
 
 mongo();
 
